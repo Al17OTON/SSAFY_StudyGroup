@@ -1,3 +1,5 @@
+package SWEA.Num7272;
+
 import java.util.Scanner;
 
 public class Solution {
