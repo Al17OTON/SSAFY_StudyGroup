@@ -1,8 +1,8 @@
-package SWEA.Num2805;
+package Week01;
 
 import java.util.Scanner;
 
-public class Solution {
+public class SWEA_2805_농작물수확하기 {
     public static void main(String[] args) {
         int[][] map = new int[49][49];
 

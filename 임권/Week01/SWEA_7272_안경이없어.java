@@ -1,8 +1,8 @@
-package SWEA.Num7272;
+package Week01;
 
 import java.util.Scanner;
 
-public class Solution {
+public class SWEA_7272_안경이없어 {
   
 	static String onehole = "ADOPQR";   //구멍이 하나인 문자열
 	
