@@ -1,4 +1,4 @@
-// swea 7272 Java
+// swea 7272. 안경이 없어! (Java)
 
 import java.util.Scanner;
 
