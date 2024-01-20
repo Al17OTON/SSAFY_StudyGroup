@@ -1,9 +1,9 @@
-package swea.d3_2805;
+package 목요빈.Week01;
 
 import java.util.Scanner;
 
-// swea d3 2805 : 농작물 수확하기
-public class Solution {
+// SWEA d3 2805 : 농작물 수확하기
+public class SWEA_2805_농작물수확하기 {
 	public static void main(String args[]) throws Exception
     {
 		Scanner sc = new Scanner(System.in);

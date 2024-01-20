@@ -1,10 +1,10 @@
-package swea.d3_7272;
+package 목요빈.Week01;
 
 import java.io.*;
 import java.util.*;
 
-// swea d3 7272 : 안경이 없어!
-public class Solution {
+// SWEA d3 7272 : 안경이 없어!
+public class SWEA_7272_안경이없어 {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		Scanner sc = new Scanner(System.in);
