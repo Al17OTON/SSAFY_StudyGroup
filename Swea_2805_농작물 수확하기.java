@@ -17,7 +17,7 @@ import java.io.InputStreamReader;
 //        범위 : n/2+1 = r, range(i,i-r:n-(i-r))
 //
 
-public class solve2805 {
+public class Swea_2805_농작물 수확하기{
 
     public static void main(String[] args) throws IOException {
         start();

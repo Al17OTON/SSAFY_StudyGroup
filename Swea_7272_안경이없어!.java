@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class solve7272 {
+public class Swea_7272_안경이없어! {
 
     public final static String ZERO = "CEFGHIJKLMNSTUVWXYZ";
     public final static String ONE = "ADOPQR";
