@@ -1,4 +1,6 @@
-class Solution
+import java.util.*;
+
+class SWEA_7272_안경이없어
 {	
 	static String[] data= { "C","E","F","G","H","I","J","K","L","M","N","S","T","U","V","W","X","Y","Z"};
 	static List<String> noRing=new ArrayList<>(Arrays.asList(data)); //
