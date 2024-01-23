@@ -32,13 +32,14 @@ public class SWEA_7272_안경이없어 {
 	}
 	
 	static int count(String s) {
-        int result = 0;
         String[] one = {"A", "D", "O", "P", "Q", "R"};
-         
+
+        if(s.equals("B")) 
+        	return 2;
         for(String str: one) {
-            if (s.equals(str)) result = 1;
-            else if(s.equals("B")) result = 2;
+            if (s.equals(str)) 
+            	return 1;
         }
-        return result;
+        return 0;
     }
 }
