@@ -6,7 +6,7 @@ import java.util.Scanner;
  * 그냥 시뮬레이션으로 하는 문제라 생각하여 주어진 요구사항에 맞추어 코딩하였습니다.
  */
 
-public class BJ_1592_영식이와친구들 {
+public class BOJ_1592_영식이와친구들 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
