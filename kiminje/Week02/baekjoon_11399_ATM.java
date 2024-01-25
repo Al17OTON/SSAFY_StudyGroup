@@ -14,16 +14,17 @@ public class Main {
 
         Arrays.sort(P);
 
-        int answer = 0;
+        int[] dp = new int[N];
+        dp[0] = P[0];
+        int answer = dp[0];
         
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < i + 1; j++) {
-                answer += P[j];
-            }
-        }
-
+        for (int i = 1; i < N; i++) {
+			dp[i] = dp[i - 1] + P[i];
+            answer += dp[i];
+		}
+        
         System.out.println(answer);
 
-        sc.close();
+        // sc.close();
     }
 }
