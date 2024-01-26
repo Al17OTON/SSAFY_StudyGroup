@@ -19,5 +19,5 @@ public class BOJ_11399_ATM {
 		}
 		System.out.println(answer);
 	}
-
 }
+
