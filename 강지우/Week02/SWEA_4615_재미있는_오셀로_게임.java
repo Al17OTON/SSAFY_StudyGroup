@@ -3,6 +3,7 @@ package 강지우.Week02;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
@@ -43,7 +44,7 @@ public class SWEA_4615_재미있는_오셀로_게임 {
                 int d = Integer.parseInt(st.nextToken());
                 arr[si][sj] = d;
                 for (int j = 0; j < q.length; j++) {
-                    Stack r = new Stack();
+                    Stack<Integer> r = new Stack<>();
                     for (int mul = 1; mul < N; mul++) {
                         int ni = si + q[j][0] * mul;
                         int nj = sj + q[j][1] * mul;
@@ -52,8 +53,8 @@ public class SWEA_4615_재미있는_오셀로_게임 {
                                 break;
                             } else if (arr[ni][nj] == d) {
                                 while (r.size() > 0) {
-                                    int tj = (int) r.pop();
-                                    int ti = (int) r.pop();
+                                    int tj = r.pop();
+                                    int ti = r.pop();
                                     arr[ti][tj] = d;
                                 }
                                 break;
@@ -78,8 +79,7 @@ public class SWEA_4615_재미있는_오셀로_게임 {
                     }
                 }
             }
-
-            System.out.printf("#%d %d %d",start,bcnt,wcnt);
+            System.out.printf("#%d %d %d\n",start,bcnt,wcnt);
         }
     }
 }
