@@ -1,3 +1,5 @@
+package 전영주.Week01;
+
 import java.util.*;
 
 class SWEA_7272_안경이없어

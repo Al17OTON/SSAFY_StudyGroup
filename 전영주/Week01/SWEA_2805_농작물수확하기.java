@@ -1,3 +1,5 @@
+package 전영주.Week01;
+
 import java.util.*;
 import java.io.FileInputStream;
 
