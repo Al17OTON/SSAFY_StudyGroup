@@ -39,3 +39,49 @@ public class Problem5904 {
         }
     }
 }
+
+// 메모리 초과
+// import java.io.BufferedReader;
+// import java.io.FileInputStream;
+// import java.io.InputStreamReader;
+// // import java.util.StringTokenizer;
+
+// public class Main {
+// 	static int N;
+// 	static StringBuilder moo = new StringBuilder();
+
+// 	public static void main(String[] args) throws Exception {
+// 		System.setIn(new FileInputStream("Input5904.txt"));
+// 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+// 		// StringTokenizer st;
+		
+// 		N = Integer.parseInt(br.readLine()) - 1;
+// 		moo.append("moo");
+// 		getMoo(0);
+		
+// 		System.out.println(moo.charAt(N));
+		
+// 		// br.close();
+// 	}
+
+// 	private static void getMoo(int n) {
+// 		if (N < moo.length()) {
+// 			return;
+// 		}
+		
+// 		StringBuilder tempMoo = new StringBuilder();
+// 		StringBuilder middleMoo = new StringBuilder();
+// 		middleMoo.append("m");
+		
+// 		for (int i = 0; i < n + 3; i++) {
+// 			middleMoo.append("o");
+// 		}
+		
+// 		tempMoo.append(moo);
+// 		moo.append(middleMoo);
+// 		moo.append(tempMoo);
+		
+// 		getMoo(n + 1);
+// 	}
+// }
+
