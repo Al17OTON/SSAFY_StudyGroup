@@ -4,10 +4,12 @@ import java.io.*;
 public class SWEA_5658_보물상자비밀번호 {
 
 	public static void main(String[]args) throws IOException {
+		
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb= new StringBuilder();
 		StringTokenizer st=new StringTokenizer(br.readLine());
 		int T=Integer.parseInt(st.nextToken());
+		
 		for (int t = 1; t <= T; t++) {
 			st=new StringTokenizer(br.readLine());
 			int n=Integer.parseInt(st.nextToken());
@@ -16,7 +18,9 @@ public class SWEA_5658_보물상자비밀번호 {
 			st=new StringTokenizer(br.readLine());
 			sb=new StringBuilder();
 			sb.append(st.nextToken());
+			
 			int count=n/4;//총 돌아야하는 횟수 n/4 이후는 반복된다
+			
 			while(count>0) {
 				for (int i = 0; i < n; i+=n/4) {
 					String temp="";
@@ -25,7 +29,7 @@ public class SWEA_5658_보물상자비밀번호 {
 					}
 					createdNum.add(Integer.parseInt(temp.toString(),16));				
 				}
-        //스트링빌더로 스트링 자체를 바꿔주기
+				//스트링빌더로 스트링 자체를 바꿔주기
 				char a=sb.charAt(n-1);
 				sb.deleteCharAt(n-1);
 				sb.insert(0, a);
