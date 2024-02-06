@@ -11,6 +11,8 @@
 ### 스터디 문제 목록
 | 문제                                           | 날짜         |풀이1| 풀이2    | 풀이3 | 풀이4 | 풀이5                                                                                                          |
 |----------------------------------------------|------------|---|--------|---|---|--------------------------------------------------------------------------------------------------------------|
+| [BOJ 15686. 치킨배달](https://www.acmicpc.net/problem/15686) | 24.02.08 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
+| [SWEA 1949. 등산로 조성](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PoOKKAPIDFAUq) | 24.02.07 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
 | [SWEA 6109. 추억의 2048게임](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWbrg9uabZsDFAWQ) | 24.02.06 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
 | [SWEA 5658. 보물상자 비밀번호](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRUN9KfZ8DFAUo) | 24.02.05 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
 | [SWEA 5653. 줄기세포배양](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRJ8EKe48DFAUo) | 24.02.03 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
