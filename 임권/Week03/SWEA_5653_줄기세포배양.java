@@ -98,3 +98,123 @@ public class SWEA_5653_줄기세포배양 {
         }
     }
 }
+
+/*
+
+package SWEA;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+class Cell {
+	int x, cnt = 1, time;	//x는 세포의 생명력 수치, cnt는 현재 주기 위치, time은 세포가 어느 시점에 번식되었는지 기록
+	boolean active = false;	//현재 활성화 상태인지
+	boolean isdead = false;
+	
+	Cell(int x, int time) {
+		this.x = x;
+		this.time = time;
+	}
+	
+	void timePass() {	//세포의 시간을 흐르게 만든다.
+		if(!active && !isdead) {
+			cnt++;
+			
+			if(cnt == x + 1) {
+				active = true;
+			}
+		} else if(active) {
+			isdead = true;
+		}
+	}
+}
+class XY {	//좌표 기록용 클래스, 큐에 사용
+	public XY(int i2, int j2) {
+		// TODO Auto-generated constructor stub
+		i = i2;
+		j = j2;
+	}
+
+	int i, j;
+}
+
+public class SWEA_5653_줄기세포배양 {
+	
+	static Queue<XY> q = new LinkedList<>();
+	static int[] dirX = {-1, 1, 0, 0};
+	static int[] dirY = {0, 0, -1, 1};
+	static int N, M, K;
+	static Cell[][] map;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		// TODO Auto-generated method stub
+		//BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		//StringTokenizer st;
+		Scanner sc = new Scanner(System.in);
+		
+		int T = sc.nextInt();
+		
+		for(int t = 1; t <= T; t++) {
+			N = sc.nextInt();
+			M = sc.nextInt();
+			K = sc.nextInt();
+			
+			map = new Cell[N][M];
+			
+			for(int i = 0; i < N; i++) {
+				//st = new StringTokenizer(br.readLine());
+				for(int j = 0; j < M; j++) {
+					//map[i][j] = new Cell(Integer.parseInt(st.nextToken()), 0);
+					map[i][j] = new Cell(sc.nextInt(), 0);
+					if(map[i][j].x != 0) {
+						q.add(new XY(i, j));
+					}
+				}
+			}
+			
+			System.out.println("#" + t + " " + sim());
+		}
+	}
+	
+	static int sim() {
+		int time = 0, result = q.size();
+		XY tmp;
+		while(time < K) {
+			tmp = q.peek();
+			while(!q.isEmpty() && map[tmp.i][tmp.j].time == time) {	//시간대가 같을때만 시뮬레이션하기
+				tmp = q.poll();
+				if(map[tmp.i][tmp.j].active) {	//세포가 활성화 상태일때
+					for(int a = 0; a < dirX.length; a++) {	//4방탐색
+						int ii = tmp.i + dirX[a], jj = tmp.j + dirY[a]; 
+						if(ii >= N || ii < 0 || jj >= M || jj < 0) continue;
+						if(map[ii][jj].x < map[tmp.i][tmp.j].x && map[ii][jj].time == time + 1) {
+							
+							if(map[ii][jj].x == 0) result++;	//만약 빈공간이라면 증가, 다른 세포를 덮어씌운경우는 스킵
+							
+							map[ii][jj].x = map[tmp.i][tmp.j].x;
+							map[ii][jj].time = time + 1;	//다음시간으로 넣기
+							
+							q.add(new XY(ii, jj));
+						}
+					}
+				}
+				else {
+					//세포가 비활성화라면 시간을 보내고 기다려본다
+					map[tmp.i][tmp.j].timePass();
+					q.add(new XY(tmp.i, tmp.j));
+				}
+			}
+			
+			time++;
+		}
+		
+		return result;
+	}
+
+}
+
+ */
