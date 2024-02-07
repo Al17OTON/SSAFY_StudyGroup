@@ -6,8 +6,10 @@ public class BOJ_5904_Moo게임{
     static int curLen=10;
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
+
         int n=sc.nextInt();
         getLen(n,3,3);
+
 
     }
     static void getLen(int targetLen,int currLen, int middleLen) {
@@ -17,17 +19,7 @@ public class BOJ_5904_Moo게임{
         if(newLen<targetLen) {
             getLen(targetLen,newLen,middleLen+1);
         }
-//        if(targetLen<11) {
-//            switch(targetLen) {
-//                case 1,4,8:
-//                    System.out.println("m");
-//                break;
-//                default:
-//                    System.out.println("o");
-//                break;
-//             }
-//            System.exit(0);
-//        }
+
         if(targetLen<=3) {
             switch(targetLen) {
             case 1:
