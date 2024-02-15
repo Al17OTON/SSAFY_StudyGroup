@@ -9,148 +9,114 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 class CORE {
-    int r, c, t;
+    int r, c;
 
-    public CORE(int r, int c, int t) {
+    public CORE(int r, int c) {
         this.r = r;
         this.c = c;
     }
-    
 }
-
 public class SWEA_1767_프로세서연결하기 {
-    static int N, maxCount, minLen;
+    static int N, maxCore, minLen;
     static boolean[][] map;
-    static boolean[][] mapCopy;
-    static List<CORE> core = new ArrayList<>();
-    static CORE[] sel;
+    static List<CORE> core;
 
     static int[] dr = {-1, 1, 0, 0};
     static int[] dc = {0, 0, -1, 1};
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
-
         int T = Integer.parseInt(br.readLine());
 
         for(int t = 1; t <= T; t++) {
-            maxCount = 0;
+            core = new ArrayList<>();
+            maxCore = 0;
             minLen = Integer.MAX_VALUE;
             N = Integer.parseInt(br.readLine());
             map = new boolean[N][N];
-
+            
             for(int r = 0; r < N; r++) {
                 st = new StringTokenizer(br.readLine());
                 for(int c = 0; c < N; c++) {
-                    if(Integer.parseInt(st.nextToken()) == 1) {
+                    if(st.nextToken().equals("1")) {
                         map[r][c] = true;
-                        core.add(new CORE(r, c, 0));
+                        
+                        //만약 가장자리에 붙어있는 코어라면 연산에서 제외하기
+                        if(r == 0 || r == N - 1 || c == 0 || c == N - 1) continue;
+                        core.add(new CORE(r, c));
                     }
                 }
             }
-            sel = new CORE[core.size()];
-            boolean[] v = new boolean[sel.length];
-            permutation(0, v);
+
+            dfs(0, 0, 0);
 
             System.out.println("#" + t + " " + minLen);
+
         }
     }
-
-    //프로세스가 연결될 수 있도록 최단 거리 찾기
-    static int connectBfs(CORE a) {
-        int result = 0;
-        CORE des = new CORE(0, 0, 0);
-        ArrayDeque<CORE> q = new ArrayDeque<>();
-        int[][] path = new int[N][N];
-        q.offer(a);
-        L : while(!q.isEmpty()) {
-            CORE t = q.poll();
-
-            for(int d = 0; d < dr.length; d++) {
-                int rr = t.r + dr[d];
-                int cc = t.c + dc[d];
-                
-                
-                if(rr >= N || rr < 0 || cc >= N || cc < 0) {
-                    des = t;
-                    break L;
-                } else if(mapCopy[rr][cc] || path[rr][cc] != 0) continue;
-
-                
-                path[rr][cc] = t.t + 1;
-                q.offer(new CORE(rr, cc, t.t + 1));
-            }
-        }
-
-        if(des.r > 0 && des.r < N - 1 && des.c > 0 && des.c < N - 1) return 0;
-
-        result = des.t;
-
-        int r = des.r, c = des.c;
-        mapCopy[r][c] = true;
-        for(int i = 0; i < des.t; i++) {
-            for(int d = 0; d < dr.length; d++) {
-                int rr = r + dr[d];
-                int cc = c + dc[d];
-                if(path[rr][cc] + 1 == path[r][c]) {
-                    r = rr;
-                    c = cc;
-                    mapCopy[rr][cc] = true;
-                    break;
-                }
-            }
-        }
-
-        print(path);
-        return result;
-    }
-
-    static void permutation(int idx, boolean[] v) {
+    
+    //모든 코어가 최대로 연결될 수 있는 최소 거리 찾기
+    static void dfs(int idx, int len, int coreCount) {
         if(idx == core.size()) {
-            copyMap();
-            int sum = 0, count = 0;
-            for(int j = 0; j < idx; j++) {
-                int tmp = connectBfs(sel[j]);
-                if(tmp != 0) {
-                    sum += tmp;
-                    count++;
-                }
-            }
-            if(count > maxCount) {
-                maxCount = count;
-                minLen = sum;
-            } else if(count == maxCount && minLen > sum) {
-                minLen = sum;
+            //가장 많은 코어를 연결한 값으로 업데이트
+            if(coreCount > maxCore) {
+                maxCore = coreCount;
+                minLen = len;
+
+            //만약 연결된 코어수가 같다면 최소 길이로 업데이트
+            } else if(coreCount == maxCore) {
+                minLen = Math.min(minLen, len);
             }
             return;
         }
 
-        for(int i = 0; i < core.size(); i++) {
-            if(!v[i]) {
-                sel[idx] = core.get(i);
-                v[i] = true;
-                permutation(idx + 1, v);
-                v[i] = false;
+        CORE co = core.get(idx);
+        for(int i = 0; i < dr.length; i++) {
+            //전선 연결, 연결에 성공하면 0이 아닌 수가 반환되어 결과를 알 수 있다.
+            int res = makeLine(co.r + dr[i], co.c + dc[i], i, 1);
+
+            //연결못한 경우도 다른 코어를 연결하러 감
+            if(res == 0) dfs(idx + 1, len, coreCount);
+            else {
+                dfs(idx + 1, len + res, coreCount + 1);
+                //원상복구
+                deleteLine(co.r + dr[i], co.c + dc[i], i);
             }
         }
     }
 
-    static void copyMap() {
-        mapCopy = new boolean[N][];
-        for(int r = 0; r < map.length; r++) {
-            mapCopy[r] = map[r].clone();
+    //주어진 방향으로 전선연결하기. 만약 장애물을 만나면 전선을 원상복구한다.
+    static int makeLine(int r, int c, int dir, int len) {
+        //다른 선이나 코어를 만나면 실패
+        if(map[r][c]) {
+            return 0;
         }
+        //만약 끝에 도달하면 현재까지의 길이 반환
+        if(r == N - 1 || r == 0 || c == N - 1 || c == 0) {
+            return len;
+        }
+
+        //전선설치
+        map[r][c] = true;
+
+        //다음 전선설치하러가기
+        int tmp = makeLine(r + dr[dir], c + dc[dir], dir, len + 1);
+        
+        //만약 0이 아니라면 종료 
+        if(tmp != 0) return tmp;
+
+        //0이 반환되었다면 전선 복구
+        map[r][c] = false;
+
+        return 0;
     }
 
-    static void print(int[][] m) {
-        System.out.println();
-        for(int i = 0; i < N; i++) {
-            for(int j = 0; j < N; j++) {
-                System.out.print(m[i][j] + " ");
-            }
-            System.out.println();
-        }
-        System.out.println();
+    //주어진 방향에 있는 전선 제거하기
+    static void deleteLine(int r, int c, int dir) {
+        if(r == N - 1 || r == 0 || c == N - 1 || c == 0) return;
+
+        map[r][c] = false;
+        deleteLine(r + dr[dir], c + dc[dir], dir);
     }
 }
 
