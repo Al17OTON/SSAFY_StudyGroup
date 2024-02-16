@@ -52,6 +52,7 @@ public class BOJ_6987_월드컵 {
 			match[A][0]++;
 			match[B][2]++;
 			if(match[A][0] <= league[A][0] && match[B][2] <= league[B][2]) {    //가지치기
+
 				if(dfs(match, A, B + 1)) return true;
 			}
 			match[A][0]--;

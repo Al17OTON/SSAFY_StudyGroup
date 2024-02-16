@@ -3,6 +3,7 @@ package Week05;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -152,4 +153,3 @@ public class SWEA_1767_프로세서연결하기 {
 0 0 0 0 0 0 1 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0
 */
-
