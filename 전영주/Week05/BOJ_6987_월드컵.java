@@ -1,4 +1,4 @@
-package problemSolving_homework;
+package 전영주.Week05;
 
 import java.util.*;
 
