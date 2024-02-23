@@ -51,7 +51,8 @@ public class BOJ_6987_월드컵 {
 			//이긴경우
 			match[A][0]++;
 			match[B][2]++;
-			if(match[A][0] <= league[A][0] || match[B][2] <= league[B][2]) {    //가지치기
+			if(match[A][0] <= league[A][0] && match[B][2] <= league[B][2]) {    //가지치기
+
 				if(dfs(match, A, B + 1)) return true;
 			}
 			match[A][0]--;
@@ -60,7 +61,7 @@ public class BOJ_6987_월드컵 {
 			//비긴경우
 			match[A][1]++;
 			match[B][1]++;
-			if(match[A][1] <= league[A][1] || match[B][1] <= league[B][1]) {
+			if(match[A][1] <= league[A][1] && match[B][1] <= league[B][1]) {
 				if(dfs(match, A, B + 1)) return true;
 			}
 			match[A][1]--;
@@ -70,7 +71,7 @@ public class BOJ_6987_월드컵 {
 			//진경우
 			match[A][2]++;
 			match[B][0]++;
-			if(match[A][2] <= league[A][2] || match[B][0] <= league[B][0]) {
+			if(match[A][2] <= league[A][2] && match[B][0] <= league[B][0]) {
 				if(dfs(match, A, B + 1)) return true;
 			}
 			match[A][2]--;
