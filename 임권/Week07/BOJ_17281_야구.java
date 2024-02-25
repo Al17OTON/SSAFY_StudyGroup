@@ -1,4 +1,4 @@
-package SWEA;
+package Week07;
 
 import java.io.BufferedReader;
 import java.io.IOException;
