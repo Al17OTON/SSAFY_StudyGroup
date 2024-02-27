@@ -10,7 +10,6 @@ public class BOJ_17281_야구 {
 	static boolean[] selected;
 	
 	// 타순과 득점을 구해라
-	// 8! 정도는 ㄱㅊ으려나? -> 아 무조건 시초임 아닌가! 모르겠다!
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st;
