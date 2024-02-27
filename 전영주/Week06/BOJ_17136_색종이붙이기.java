@@ -26,7 +26,7 @@ public class BOJ_17136_색종이붙이기 {
 		if(answer<count)return;
 		
 		//다 붙였으면
-		if(canPaperIn(0, 0, 9, 1)) {
+		if(canPaperIn(0, 0, 10, 1)) {
 			answer=Math.min(answer, count);
 			return;
 		}
@@ -46,6 +46,7 @@ public class BOJ_17136_색종이붙이기 {
 							stickOrRemove(r, c, l, 1);
 						}
 					}
+					return;
 				}
 			}
 		}
@@ -62,7 +63,7 @@ public class BOJ_17136_색종이붙이기 {
 	}
 	
 	private static boolean canPaperIn(int i,int j,int len, int endCheck) {
-		if(i+len>=10||j+len>=10)return false;
+		if(i+len>10||j+len>10)return false;
 
 		for (int r = i; r < i+len; r++) {
 			for (int c = j; c < j+len; c++) {
