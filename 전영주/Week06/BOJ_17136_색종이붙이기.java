@@ -46,6 +46,7 @@ public class BOJ_17136_색종이붙이기 {
 							stickOrRemove(r, c, l, 1);
 						}
 					}
+					//얠 안하면 시간초과남
 					return;
 				}
 			}
