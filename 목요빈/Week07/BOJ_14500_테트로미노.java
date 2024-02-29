@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class BOJ_14500_테트로미노 {
 
 	static int N, M, max;
 	static int[][] board;
