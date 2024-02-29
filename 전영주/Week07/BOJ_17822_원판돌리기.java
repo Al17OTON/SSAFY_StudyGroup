@@ -7,6 +7,7 @@ public class BOJ_17822_원판돌리기 {
     static int n,m,t;
     static int[][]arr;
     static int[][]rotateInput;
+    static double avg;
     public static void main(String[] args) throws Exception {
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st=new StringTokenizer(br.readLine());
@@ -32,7 +33,10 @@ public class BOJ_17822_원판돌리기 {
             print(arr);
             rotateSimul(x-1,k);
             print(arr);
-            eraseSimul();
+            if(!eraseSimul()) {
+            	//평균 구하기
+            	makeValueAverage();
+            }
             print(arr);
             
         }
@@ -65,7 +69,9 @@ public class BOJ_17822_원판돌리기 {
 		}
          arr[x][n-k]=temp;
     }
-    private static void eraseSimul() {
+    private static boolean eraseSimul() {
+    	boolean flag=false;
+    	avg=0;
         int [][]temp=new int[n][];
         for (int i = 0; i < n; i++) {
             temp[i]=Arrays.copyOf(arr[i], m);
@@ -76,32 +82,64 @@ public class BOJ_17822_원판돌리기 {
             if(temp[i][0]==temp[i][1]&&temp[i][0]!=0) {
                 arr[i][0]=0;
                 arr[i][1]=0;
+                flag=true;
             }
             if(temp[i][0]==temp[i][m-1]&&temp[i][0]!=0) {
                 arr[i][0]=0;
                 arr[i][m-1]=0;
+                flag=true;
             }
         }
         //같은 행 체크
         for (int i =0; i < n; i++) {
             for (int j = 1; j <m-1; j++) {
+            	
                 if(temp[i][j]==temp[i][j+1]&&temp[i][j]!=0) {
                 arr[i][j]=0;
                 arr[i][j+1]=0;
+                flag=true;
+                
                 }
             }
         }
+        
         //같은 열 체크
         for (int i =0; i < n-1; i++) {
             for (int j = 0; j <m; j++) {
                 if(temp[i][j]==temp[i+1][j]&&temp[i][j]!=0) {
                 arr[i][j]=0;
                 arr[i+1][j]=0;
+                flag=true;
                 }
             }
         }
+        if(!flag) {
+        	sumArr();
+        }
+		return flag;
     }
-}
+    private static void sumArr() {
+    	avg=0;
+    	int count=0;
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < m; j++) {
+				avg+=arr[i][j];
+				if(arr[i][j]!=0)count++;
+			}
+		}
+		avg/=count;
+	}
+
+    private static void makeValueAverage() {
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < m; j++) {
+				if(arr[i][j]!=0) {
+					if(arr[i][j]>avg)arr[i][j]--;
+					else if(arr[i][j]<avg)arr[i][j]++;
+				}
+			}
+		}
+	}}
 /*
  * 1초 512mb
  * n,m<50 
