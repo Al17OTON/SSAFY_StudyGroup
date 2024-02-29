@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
 //이전에 풀었던 방식(dp?)보다 살짝 느리다(기존 : 492ms  , 지금 : 564ms) 대신 메모리를 좀 덜 쓴다. 
 //이 방식이 구현하기 더 편한거 같다.
 //dfs로 방문하지 않은 곳까지 4깊이 만큼 들어가서 탐색한 합이 최대가 되는 것을 찾는다.
-public class BOJ_14500_테트로미노v2 {
+public class BOJ_14500_테트로미노v3 {
     
     static int R, C, maxSum = -1;
     static int[][] map;

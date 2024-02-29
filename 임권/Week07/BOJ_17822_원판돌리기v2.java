@@ -20,7 +20,7 @@ import java.util.StringTokenizer;
 //1. 원판이 회전되었을때 제거되는 숫자는 모든 원판에 해당한다. == 모든 요소를 탐색
 //2. 원판이 회전되었을때 제거될 숫자가 없다면 평균을 통해 +/- 1을 하는데 이때 평균은 모든 원판의 요소값 / 모든 원판의 남은 요소 수
 
-public class BOJ_17822_원판돌리기 {
+public class BOJ_17822_원판돌리기v2 {
 
     static class Round {
         //0 - clock, 1 - semi clock
