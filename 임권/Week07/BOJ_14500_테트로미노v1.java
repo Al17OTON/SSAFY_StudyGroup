@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class BOJ_14500_테트로미노 {
+public class BOJ_14500_테트로미노v1 {
     
     static int R, C, maxSum = -1;
     static int[][] map;

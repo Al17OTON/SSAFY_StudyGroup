@@ -100,15 +100,25 @@ public class BOJ_17472_다리만들기2 {
 
         //print();
 
+        //방문 표시
         boolean[][] tmp = new boolean[R + 2][C + 2];
+
+        //각 섬의 위치를 넘겨준다.
         for(int i = 0; i < island.size(); i++) {
+            //각 섬의 모든 해변에서 다른 섬들과 연결을 시도한다.
+            //가능한 연결은 전부 간선으로 변환하여 우선순위큐에 삽입한다.
             findShore(island.get(i).r, island.get(i).c, tmp);
         }
         
         //크루스칼로 최소 신장트리 만들기
-        //각 섬에 대한 선택 여부
+        //우선순위 큐에서 가중치가 낮은 간선들을 뽑아낸다.
+
+        //각 섬에 대한 집합 여부 유니온파인드
         Union u = new Union(island.size());
+
+        //c = 선택된 간선 수 -> 최소신장트리는 (섬 - 1)개 만큼의 간선이 선택되어야한다.
         int c = 0, weightSum = 0;
+
         while(!edge.isEmpty()) {
             Edge e = edge.poll();
 
@@ -118,7 +128,9 @@ public class BOJ_17472_다리만들기2 {
             }
         }
 
+        //최소신장트리가 아니라면 -1
         if(c != island.size() - 1) weightSum = -1;
+
         System.out.println(weightSum);
     }
 
@@ -142,6 +154,7 @@ public class BOJ_17472_다리만들기2 {
         }
     }
 
+    //주어진 방향으로 계속 직진하여 다른 섬과 연결을 시도한다.
     static void setBridge(int r, int c, int dir, int num, int len) {
         //basis part : 바다를 건너 육지를 만났다.
         if(map[r][c] != 0) {
@@ -165,6 +178,7 @@ public class BOJ_17472_다리만들기2 {
     //dfs로 섬의 번호를 지정해준다.
     static void setIsland(int r, int c, int num) {
         map[r][c] = num;
+
         for(int i = 0; i < dr.length; i++) {
             int nr = r + dr[i];
             int nc = c + dc[i];
