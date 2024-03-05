@@ -17,7 +17,7 @@ public class Solution {
             for (int i = 0; i < n; i++) {
                 arr[i] = br.readLine().charAt(0);
             }
-            binarySearch();
+            twoPoint();
             System.out.printf("#%d %s",tc,sb);
         }
     }
@@ -27,7 +27,7 @@ public class Solution {
 //B
 //C
 //B
-    private static void binarySearch() {
+    private static void twoPoint() {
         int start = 0;
         int end = n - 1;
         // 숫자 비교
