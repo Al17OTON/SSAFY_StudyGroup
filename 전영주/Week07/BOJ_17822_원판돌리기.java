@@ -34,11 +34,12 @@ public class BOJ_17822_원판돌리기 {
             for (int j = x; j <=n; j+=x) {
 				rotateSimul(j-1,k);
 			}
-
+            //System.out.println();
             if(!eraseSimul()) {
             	//평균 구하기
             	makeValueAverage();
             }
+            //print(arr);
             
         }
         int answer=0;
