@@ -12,7 +12,7 @@
 | 문제                                           | 날짜         |풀이1| 풀이2    | 풀이3 | 풀이4 | 풀이5                                                                                                          |
 |----------------------------------------------|------------|---|--------|---|---|--------------------------------------------------------------------------------------------------------------|
 | [SWEA 4014. 특이한자석](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWIeV9sKkcoDFAVH) | 24.03.07 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
-| [백준 17413. 낚시왕](https://www.acmicpc.net/problem/17413) | 24.03.06 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
+| [백준 17143. 낚시왕](https://www.acmicpc.net/problem/17143) | 24.03.06 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
 | [SWEA 7208. 지도 칠하기](https://swexpertacademy.com/main/code/userProblem/userProblemDetail.do?contestProbId=AWlHcsEqf1YDFASG) | 24.03.05 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
 | [SWEA 5672. 올해의 조련사](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRgX36gSIDFAUo) | 24.03.04 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
 | [백준 2580. 스도쿠](https://www.acmicpc.net/problem/2580) | 24.03.01 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
