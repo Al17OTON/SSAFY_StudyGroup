@@ -59,13 +59,13 @@ public class BOJ_17143_낚시왕 {
         int[][] sharkLoc = new int[R][C];
         // 상어 낚시 -> 땅과 제일 가까운 상어 잡기
         for (int r = 0; r < R; r++) { // max : 100
-			if(map[r][c] != 0) {
-				sum += shark[map[r][c]].size;
-				shark[map[r][c]] = null; // 이 자리에 있던 상어 null 처리
-				map[r][c] = 0; // 이 자리에 있던 상어를 잡음
-				break;
-			}
+		if(map[r][c] != 0) {
+			sum += shark[map[r][c]].size;
+			shark[map[r][c]] = null; // 이 자리에 있던 상어 null 처리
+			map[r][c] = 0; // 이 자리에 있던 상어를 잡음
+			break;
 		}
+	}
         
         // 상어 이동 -> visited에 저장된 상어 객체를 인수로 넣어 삭제하기
         for (int i = 1; i <= M; i++) {
@@ -76,19 +76,19 @@ public class BOJ_17143_낚시왕 {
         	int nr = s.r;
         	int nc = s.c;
         	while(speed >= 0) {
-            	if(nr < 0 || nr >= R || nc < 0 || nc >= C) {
-            		// 방향 바꾸기
-            		nr -= dr[dir];
-            		nc -= dc[dir];
-            		
-            		if(dir == 0) dir = 1;
-            		else if(dir == 1) dir = 0;
-            		else if(dir == 2) dir = 3;
-            		else dir = 2;
-            		speed += 1;
-            	}
-            	
-            	nr += dr[dir];
+	            	if(nr < 0 || nr >= R || nc < 0 || nc >= C) {
+	            		// 방향 바꾸기
+	            		nr -= dr[dir];
+	            		nc -= dc[dir];
+	            		
+	            		if(dir == 0) dir = 1;
+	            		else if(dir == 1) dir = 0;
+	            		else if(dir == 2) dir = 3;
+	            		else dir = 2;
+	            		speed += 1;
+	            	}
+	            	
+	            	nr += dr[dir];
         		nc += dc[dir];
         		speed -= 1;
         	}
@@ -109,8 +109,8 @@ public class BOJ_17143_낚시왕 {
     	}
         
         for (int i = 0; i < R; i++) {
-			map[i] = sharkLoc[i].clone();
-		}
+		map[i] = sharkLoc[i].clone();
+	}
      }
      System.out.println(sum);
      
