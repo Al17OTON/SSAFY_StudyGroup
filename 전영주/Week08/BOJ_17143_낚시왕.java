@@ -1,4 +1,4 @@
-package problemSolving_homework.boj;
+package 전영주.Week08;
 
 import java.util.*;
 import java.io.*;
@@ -51,7 +51,8 @@ public class BOJ_17143_낚시왕 {
 				int step=1;
 				int nX=curr.x,nY=curr.y;
 				int factor=1;
-				while(step<=curr.speed) {
+				int haveToGo=curr.dir<2?curr.speed%((r-1)*2):curr.speed%((c-1)*2);
+				while(step<=haveToGo) {
 					if(nX+dx[curr.dir]*factor<0||nX+dx[curr.dir]*factor>r-1||nY+dy[curr.dir]*factor<0||nY+dy[curr.dir]*factor>c-1)factor*=-1;
 					nX+=dx[curr.dir]*factor;
 					nY+=dy[curr.dir]*factor;
