@@ -1,10 +1,5 @@
 import java.util.*;
 class Solution {
-    public static void main(String[] args) {
-        String[] a = {"classic", "pop", "classic", "classic", "pop"};
-        int[] b = {500, 600, 150, 800, 2500};
-        solution(a,b);
-    }
     public static int[] solution(String[] genres, int[] plays) {
         List<Integer> answerList = new ArrayList<>();
         Map<String, Integer> totalPlays = new HashMap<>();
