@@ -11,6 +11,23 @@
 ### 스터디 문제 목록
 | 문제                                           | 날짜         |풀이1| 풀이2    | 풀이3 | 풀이4 | 풀이5                                                                                                          |
 |----------------------------------------------|------------|---|--------|---|---|--------------------------------------------------------------------------------------------------------------|
+| [프로그래머스. H-Index](https://school.programmers.co.kr/learn/courses/30/lessons/42747) | 24.03.28 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
+| [프로그래머스. 가장 큰 수](https://school.programmers.co.kr/learn/courses/30/lessons/42746) | 24.03.27 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
+| [프로그래머스. K번째수](https://school.programmers.co.kr/learn/courses/30/lessons/42748) | 24.03.26 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
+| [프로그래머스. 이중우선순위큐](https://school.programmers.co.kr/learn/courses/30/lessons/42628) | 24.03.25 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
+| [프로그래머스. 디스크 컨트롤러](https://school.programmers.co.kr/learn/courses/30/lessons/42627) | 24.03.24 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
+| [프로그래머스. 더 맵게](https://school.programmers.co.kr/learn/courses/30/lessons/42626) | 24.03.23 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
+| [프로그래머스. 주식가격](https://school.programmers.co.kr/learn/courses/30/lessons/42584) | 24.03.22 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
+| [프로그래머스. 다리를 지나는 트럭](https://school.programmers.co.kr/learn/courses/30/lessons/42583) | 24.03.21 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
+| [프로그래머스. 프로세스](https://school.programmers.co.kr/learn/courses/30/lessons/42587) | 24.03.20 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
+| [프로그래머스. 올바른 괄호](https://school.programmers.co.kr/learn/courses/30/lessons/12909) | 24.03.19 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
+| [프로그래머스. 기능개발](https://school.programmers.co.kr/learn/courses/30/lessons/42586) | 24.03.18 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
+| [프로그래머스. 같은 숫자는 싫어](https://school.programmers.co.kr/learn/courses/30/lessons/12906) | 24.03.17 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
+| [프로그래머스. 베스트앨범](https://school.programmers.co.kr/learn/courses/30/lessons/42579) | 24.03.16 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
+| [프로그래머스. 의상](https://school.programmers.co.kr/learn/courses/30/lessons/42578) | 24.03.15 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
+| [프로그래머스. 전화번호 목록](https://school.programmers.co.kr/learn/courses/30/lessons/42577) | 24.03.14 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
+| [프로그래머스. 완주하지 못한 선수](https://school.programmers.co.kr/learn/courses/30/lessons/42576) | 24.03.13 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
+| [프로그래머스. 폰켓몬](https://school.programmers.co.kr/learn/courses/30/lessons/1845) | 24.03.12 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
 | [백준 3197. 백조의 호수](https://www.acmicpc.net/problem/3197) | 24.03.11 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
 | [백준 1744. 수 묶기](https://www.acmicpc.net/problem/1744) | 24.03.09 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
 | [백준 2470. 두 용액](https://www.acmicpc.net/problem/2470) | 24.03.08 | [강지우]() | [김인제]() | [목요빈]() | [임 권]() | [전영주]() |
