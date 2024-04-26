@@ -1,62 +1,62 @@
 function solution(edges) {//a->b
-    let answer = [];
-    
-    let newVertex=0;
-    let barG=0,donutG=0,eightG=0;
-    
-    //make adjMatrix
+  let answer = [];
 
-    //매핑
-    let mapping=new Map();
-    edges.forEach(([from,to])=>{
-        if(!mapping.has(from)){
-            mapping.set(from,mapping.size);
-        }
-        if(!mapping.has(to)){
-            mapping.set(to,mapping.size);
-        }
-    })
-    let inDegree=Array.from({length:mapping.size},e=>0);
-    let outDegree=Array.from({length:mapping.size},e=>0);
-    edges.forEach(([from,to])=>{
-        inDegree[mapping.get(to)]++;
-        outDegree[mapping.get(from)]++;
-        
-    })
-    for(let i=0;i<mapping.size;i++){
-        if(inDegree[i]==0&&outDegree[i]>=2){
-            newVertex=i;
-        }else if(outDegree[i]==0){
-            barG++;
-        }
-        else if(outDegree[i]==2){
-            eightG++;
-        }
+  let newVertex = 0;
+  let barG = 0, donutG = 0, eightG = 0;
+
+  //make adjMatrix
+
+  //매핑
+  let mapping = new Map();
+  edges.forEach(([from, to]) => {
+    if (!mapping.has(from)) {
+      mapping.set(from, mapping.size);
     }
-    //newVertex랑 연결된 간선은 없애기
-    for([k,v] of mapping.entries()){
-        if(mapping.get(k)==newVertex){
-            newVertex=k;
-            break;
-        }
+    if (!mapping.has(to)) {
+      mapping.set(to, mapping.size);
     }
-    let newEdges=edges.filter(([from,to])=>from!==newVertex);
-    let maxG=edges.length-newEdges.length;
-    return [newVertex,maxG-barG-eightG,barG,eightG];
+  })
+  let inDegree = Array.from({ length: mapping.size }, e => 0);
+  let outDegree = Array.from({ length: mapping.size }, e => 0);
+  edges.forEach(([from, to]) => {
+    inDegree[mapping.get(to)]++;
+    outDegree[mapping.get(from)]++;
+
+  })
+  for (let i = 0; i < mapping.size; i++) {
+    if (inDegree[i] == 0 && outDegree[i] >= 2) {
+      newVertex = i;
+    } else if (outDegree[i] == 0) {
+      barG++;
+    }
+    else if (outDegree[i] == 2) {
+      eightG++;
+    }
+  }
+  //newVertex랑 연결된 간선은 없애기
+  for ([k, v] of mapping.entries()) {
+    if (mapping.get(k) == newVertex) {
+      newVertex = k;
+      break;
+    }
+  }
+  let newEdges = edges.filter(([from, to]) => from !== newVertex);
+  let maxG = edges.length - newEdges.length;
+  return [newVertex, maxG - barG - eightG, barG, eightG];
 
 }
 /*
 e<=백만
- 생성한 정점의 번호, 도넛 모양 그래프의 수, 막대 모양 그래프의 수, 8자 모양 그래프의 수??
+생성한 정점의 번호, 도넛 모양 그래프의 수, 막대 모양 그래프의 수, 8자 모양 그래프의 수??
 
 자료구조: 인접행렬? 인접리스트?-> 행렬로 하자.
 1. 정점들 중 하나를 뺏을때 즉 연결된 간선을 다 지우고 
 2. 주어진 간선을 따라서 그래프를 그리기
 3. 그럼 e번 그래프 그리기
 4. visited를 만들어서 0부터 가보기.
- - 순환이 없다면(visited true인곳을 다시 가지 않고 끝남): 막대 n,n-1
- - 순환이 있는데(visited true인곳을 다시 방문하려고 함)일단 안가고 갈 곳이 없을때까지 돌아봄
-    - n, n이면 도넛 , - 2n+1,2n+2개 면 8자 
+- 순환이 없다면(visited true인곳을 다시 가지 않고 끝남): 막대 n,n-1
+- 순환이 있는데(visited true인곳을 다시 방문하려고 함)일단 안가고 갈 곳이 없을때까지 돌아봄
+  - n, n이면 도넛 , - 2n+1,2n+2개 면 8자 
 
 n*n인데,, 시초날듯
 임의의 정점의 특징은 진입은 없고 나가는것만 있음
